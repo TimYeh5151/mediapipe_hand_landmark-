@@ -15,7 +15,7 @@ ws, hs = 1920, 1080
 cap.set(3, ws)
 cap.set(4, hs)
 
-port = "COM9"
+port = "COM5"
 board = pyfirmata.Arduino(port)
 servo_pinX = board.get_pin('d:9:s') #pin 9 Arduino
 servo_pinY = board.get_pin('d:10:s') #pin 10 Arduino
@@ -136,67 +136,7 @@ while cap.isOpened():
         #wrist coordinates
         cv2.circle(img, (px_wrist, py_wrist), 15, (255, 0, 255), cv2.FILLED)
         cv2.putText(img, str((px_wrist, py_wrist)), (px_wrist + 10, py_wrist - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-      
-        #thumb_cmc coordinates
-        cv2.circle(img, (px_1, py_1), 15, (0, 0, 255), cv2.FILLED)
-        cv2.putText(img, str((px_1, py_1)), (px_1 + 10, py_1 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #thumb_mcp coordinates
-        cv2.circle(img, (px_2, py_2), 15, (0, 0, 255), cv2.FILLED)
-        cv2.putText(img, str((px_2, py_2)), (px_2 + 10, py_2 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #thumb_ip coordinates
-        cv2.circle(img, (px_3, py_3), 15, (0, 0, 255), cv2.FILLED)
-        cv2.putText(img, str((px_3, py_3)), (px_3 + 10, py_3 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #thumb_tip coordinates
-        cv2.circle(img, (px_4, py_4), 15, (0, 0, 255), cv2.FILLED)
-        cv2.putText(img, str((px_4, py_4)), (px_4 + 10, py_4 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #index_mcp coordinates
-        cv2.circle(img, (px_5, py_5), 15, (0, 255, 0), cv2.FILLED)
-        cv2.putText(img, str((px_5, py_5)), (px_5 + 10, py_5 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #index_pip coordinates
-        cv2.circle(img, (px_6, py_6), 15, (0, 255, 0), cv2.FILLED)
-        cv2.putText(img, str((px_6, py_6)), (px_6 + 10, py_6 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #index_dip coordinates
-        cv2.circle(img, (px_7, py_7), 15, (0, 255, 0), cv2.FILLED)
-        cv2.putText(img, str((px_7, py_7)), (px_7 + 10, py_7 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #index_tip coordinates
-        cv2.circle(img, (px_8, py_8), 15, (0, 255, 0), cv2.FILLED)
-        cv2.putText(img, str((px_8, py_8)), (px_8 + 10, py_8 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #middle_mcp coordinates
-        cv2.circle(img, (px_9, py_9), 15, (255, 255, 0), cv2.FILLED)
-        cv2.putText(img, str((px_9, py_9)), (px_9 + 10, py_9 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #middle_pip coordinates
-        cv2.circle(img, (px_10, py_10), 15, (255, 255, 0), cv2.FILLED)
-        cv2.putText(img, str((px_10, py_10)), (px_10 + 10, py_10 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #middle_dip coordinates
-        cv2.circle(img, (px_11, py_11), 15, (255, 255, 0), cv2.FILLED)
-        cv2.putText(img, str((px_11, py_11)), (px_11 + 10, py_11 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #middle_tip coordinates
-        cv2.circle(img, (px_12, py_12), 15, (255, 255, 0), cv2.FILLED)
-        cv2.putText(img, str((px_12, py_12)), (px_12 + 10, py_12 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #ring_mcp coordinates
-        cv2.circle(img, (px_13, py_13), 15, (255, 0, 0), cv2.FILLED)
-        cv2.putText(img, str((px_13, py_13)), (px_13 + 10, py_13 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #ring_pip coordinates
-        cv2.circle(img, (px_14, py_14), 15, (255, 0, 0), cv2.FILLED)
-        cv2.putText(img, str((px_14, py_14)), (px_14 + 10, py_14 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #ring_dip coordinates
-        cv2.circle(img, (px_15, py_15), 15, (255, 0, 0), cv2.FILLED)
-        cv2.putText(img, str((px_15, py_15)), (px_15 + 10, py_15 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #ring_tip coordinates
-        cv2.circle(img, (px_16, py_16), 15, (255, 0, 0), cv2.FILLED)
-        cv2.putText(img, str((px_16, py_16)), (px_16 + 10, py_16 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #pinky_mcp coordinates
-        cv2.circle(img, (px_17, py_17), 15, (0, 255, 255), cv2.FILLED)
-        cv2.putText(img, str((px_17, py_17)), (px_17 + 10, py_17 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #pinky_pip coordinates
-        cv2.circle(img, (px_18, py_18), 15, (0, 255, 255), cv2.FILLED)
-        cv2.putText(img, str((px_18, py_18)), (px_18 + 10, py_18 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #pinky_dip coordinates
-        cv2.circle(img, (px_19, py_19), 15, (0, 255, 255), cv2.FILLED)
-        cv2.putText(img, str((px_19, py_19)), (px_19 + 10, py_19 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
-        #pinky_tip coordinates
-        cv2.circle(img, (px_20, py_20), 15, (0, 255, 255), cv2.FILLED)
-        cv2.putText(img, str((px_20, py_20)), (px_20 + 10, py_20 - 10), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 3)
+
         
 
 
@@ -210,11 +150,6 @@ while cap.isOpened():
         distance_thumb_pf_tip =  round(math.sqrt((px_20 - px_4)**2 + (py_20 - py_4)**2) / 96 * 2.54*10,2)
 
         # print distance        
-
-        print(f'Wrist to thumb_cmc: {distance_wt_cmc:.2f} cm')
-        #print(f'thumb_cmc to thumb_mcp: {distance_thumb_cmc_mcp:.2f} cm')
-        print(f'thumb_cmc to thumb_mcp: {int(distance_thumb_cmc_mcp)} cm')
-        
 
       
         # display distance of hand width and length

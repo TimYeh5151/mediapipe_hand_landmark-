@@ -1,7 +1,6 @@
 import cv2
 import mediapipe as mp
 import numpy as np
-#import pyfirmata
 import math
 import pyautogui
 import pygetwindow as gw
